@@ -1,4 +1,4 @@
 import * as constants from './constants'
-import icons from './icons'
+import * as icons from './icons'
 
 export { constants, icons }

@@ -1,3 +1,5 @@
 import HomePage from './HomePage/HomePage'
+import Auth from './Auth/Auth'
+import Settings from './Settings/Settings'
 
-export default { HomePage }
+export { HomePage, Auth, Settings }
