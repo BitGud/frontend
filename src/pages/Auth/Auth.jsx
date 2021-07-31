@@ -13,17 +13,29 @@ function Auth(props) {
     firebase.auth().signInWithEmailAndPassword(email, password)
   }
 
+  const signInWithGithub = async () => {
+    try {
+      const provider = new firebase.auth.GithubAuthProvider()
+      provider.addScope('repo')
+
+      const result = await firebase.auth().signInWithPopup(provider)
+      console.log('result', result)
+    } catch (err) {
+      console.error('error github', err)
+    }
+  }
+
   return (
     <div>
-      <Switch defaultChecked color="default" inputProps={{ 'aria-label': 'checkbox with default color' }} />
+      {/* <Switch defaultChecked color="default" inputProps={{ 'aria-label': 'checkbox with default color' }} />
       <button type="button">Register</button>
       <div>LOGIN - BUM BUM BUM</div>
-      <button type="button">Access with GitHub</button>
+      <button type="button">Access with GitHub</button> */}
 
-      <Grid container>
-        <Grid item>
+      <Grid container style={{ marginTop: 150 }}>
+        {/* <Grid item>
           <img alt="login logo" src={icons.login} />
-        </Grid>
+        </Grid> */}
         <Grid item>
           <div>Your name here</div>
           <input value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -35,12 +47,20 @@ function Auth(props) {
         Okay, go!
       </button>
 
-      <img alt="login 2" src={icons.login2} />
+      <button type="button" onClick={() => firebase.auth().signOut()}>
+        Logout
+      </button>
+
+      <button type="button" onClick={() => signInWithGithub()}>
+        Github Signin
+      </button>
+
+      {/* <img alt="login 2" src={icons.login2} />
       <button type="button">Login</button>
       <div>REGISTER HERE ^^</div>
 
       {/* In a Grid?? */}
-      <div>Your name here</div>
+      {/* <div>Your name here</div>
       <input />
       <div>Your password here</div>
       <input />
@@ -48,7 +68,7 @@ function Auth(props) {
       <input />
       <button type="button">Okay, go!</button>
 
-      <img alt="login 3" src={icons.login3} />
+      <img alt="login 3" src={icons.login3} /> */}
     </div>
   )
 }

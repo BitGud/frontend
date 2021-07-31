@@ -16,6 +16,7 @@ const AuthProvider = (props) => {
         setUid(user.uid)
       } else {
         setIsLoggedIn(false)
+        setUid('')
       }
       setIsLoading(false)
     })
