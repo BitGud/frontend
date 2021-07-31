@@ -1,13 +1,11 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import './App.scss'
-
 import { HomePage, Auth, Settings, Docs } from '.'
 import { ErrorPage, Layout } from '../components'
 import withRoot from '../theme/withRoot'
 
-const App = () => {
+const RestrictedRoutes = () => {
   return (
     <Layout>
       <Switch>
@@ -18,6 +16,16 @@ const App = () => {
         <Route component={ErrorPage} />
       </Switch>
     </Layout>
+  )
+}
+
+const App = () => {
+  return (
+    <Switch>
+      <Route exact path="/auth" component={Auth} />
+      <Route exact path="/" component={HomePage} />
+      <Route component={RestrictedRoutes} />
+    </Switch>
   )
 }
 
