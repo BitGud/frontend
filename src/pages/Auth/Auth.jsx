@@ -30,7 +30,7 @@ function Auth(props) {
           <input value={password} onChange={(e) => setPassword(e.target.value)} />
         </Grid>
       </Grid>
-      <button type="button" onClick={() => login()}>
+      <button type="button" onClick={login}>
         Okay, go!
       </button>
 
