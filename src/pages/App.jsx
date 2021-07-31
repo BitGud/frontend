@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import { HomePage, DashboardPage, Auth, Settings, Docs } from '.'
 import { ErrorPage, Layout } from '../components'
-import withRoot from '../theme/withRoot'
+import { withRoot } from '../theme'
 
 const RestrictedRoutes = () => {
   return (

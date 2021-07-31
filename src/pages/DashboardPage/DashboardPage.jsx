@@ -4,7 +4,6 @@ import { Button, Paper, Container, Grid, makeStyles, Typography } from '@materia
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 import icons from '../../utils/icons'
-import useTheme from '../../theme/useTheme'
 
 const useStyles = makeStyles((theme) => ({
   dashboardContainer: {

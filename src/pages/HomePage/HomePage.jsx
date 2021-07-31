@@ -15,7 +15,7 @@ function HomePage() {
   }
 
   return (
-    <div>
+    <>
       <Box m={2} display="flex" justifyContent="flex-end">
         <Button color="primary" variant="contained" onClick={goToAuth}>
           Get Started
@@ -34,7 +34,7 @@ function HomePage() {
               </Button>
             </Grid>
           </Grid>
-          <Grid item container md={6} xs={12} justifyContent="center">
+          <Grid item md={6} xs={12} justifyContent="center">
             <img className={styles.homeCat} src={icons.homeCat} alt="home-cat" />
           </Grid>
         </Grid>
@@ -89,7 +89,7 @@ function HomePage() {
           </Button>
         </Grid>
       </Container>
-    </div>
+    </>
   )
 }
 
