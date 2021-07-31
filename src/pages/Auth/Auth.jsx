@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, Switch, Button } from '@material-ui/core'
+import { Grid, Switch, Button, Box } from '@material-ui/core'
 
 import icons from '../../utils/icons'
 import { firebase } from '../../instances'
@@ -14,10 +14,12 @@ function Auth(props) {
 
   return (
     <div>
-      <Switch defaultChecked />
-      <button type="button">Register</button>
+      <Box display="flex" justifyContent="flex-end">
+        <Switch defaultChecked color="default" />
+      </Box>
+      <Button>Register</Button>
       <div>LOGIN - BUM BUM BUM</div>
-      <button type="button">Access with GitHub</button>
+      <Button>Access with GitHub</Button>
 
       <Grid container>
         <Grid item>
@@ -30,12 +32,10 @@ function Auth(props) {
           <input value={password} onChange={(e) => setPassword(e.target.value)} />
         </Grid>
       </Grid>
-      <Button type="button" onClick={() => login()}>
-        Okay, go!
-      </Button>
+      <Button onClick={login}>Okay, go!</Button>
 
       <img alt="login 2" src={icons.login2} />
-      <button type="button">Login</button>
+      <Button>Login</Button>
       <div>REGISTER HERE ^^</div>
 
       <div>Your name here</div>
@@ -44,7 +44,7 @@ function Auth(props) {
       <input />
       <div>Confirm your password</div>
       <input />
-      <button type="button">Okay, go!</button>
+      <Button>Okay, go!</Button>
 
       <img alt="login 3" src={icons.login3} />
     </div>

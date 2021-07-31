@@ -9,7 +9,9 @@ const RestrictedRoutes = () => {
   return (
     <Layout>
       <Switch>
+        <Route exact path="/auth" component={Auth} />
         <Route exact path="/settings" component={Settings} />
+        <Route exact path="/" component={HomePage} />
         <Route component={ErrorPage} />
       </Switch>
     </Layout>

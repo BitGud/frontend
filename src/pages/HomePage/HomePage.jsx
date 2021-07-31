@@ -2,10 +2,12 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { Button, Container, Grid, Typography, Box, Switch } from '@material-ui/core'
 
-import icons from '../../utils/icons'
 import useStyles from './HomePageStyles'
 
-function HomePage(props) {
+import icons from '../../utils/icons'
+import useTheme from '../../theme/useTheme'
+
+function HomePage() {
   const history = useHistory()
   const styles = useStyles()
 
@@ -15,8 +17,10 @@ function HomePage(props) {
 
   return (
     <div>
-      <Box display="flex" justifyContent="flex-end">
-        <Switch defaultChecked color="default" />
+      <Box m={2} display="flex" justifyContent="flex-end">
+        <Button color="primary" variant="contained" onClick={goToAuth}>
+          Get Started
+        </Button>
       </Box>
       <Container className={styles.homeContainer} spacing={10} maxWidth="md">
         <Grid container alignContent="center">
