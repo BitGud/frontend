@@ -7,6 +7,9 @@ import useTheme from './useTheme'
 
 const darkTheme = createTheme({
   overrides: {
+    typography: {
+      fontFamily: '"Share", "Roboto", "Helvetica", "Arial", sans-serif',
+    },
     MuiCssBaseline: {
       '@global': {
         body: {
