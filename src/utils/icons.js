@@ -10,5 +10,30 @@ import ce from '../assets/icons/ce.svg'
 import coin from '../assets/icons/coin.svg'
 import cloud from '../assets/icons/cloud.svg'
 import timer from '../assets/icons/timer.svg'
+import homeCat from '../assets/icons/home-cat.png'
+import homeRaspberry from '../assets/icons/raspberry.svg'
+import homeThinking from '../assets/icons/thinking.svg'
+import homePhonelove from '../assets/icons/phonelove.svg'
+import homeCode from '../assets/icons/code.svg'
 
-export default { login, login2, login3, error, error2, gamer, cat, sun, cloud, ce, coin, timer }
+export default {
+  login,
+  login2,
+  login3,
+  error,
+  error2,
+  homeCat,
+  homeRaspberry,
+  homeThinking,
+  homeCat2: cat,
+  homePhonelove,
+  homeCode,
+  homeCe: ce,
+  gamer,
+  cat,
+  sun,
+  cloud,
+  ce,
+  coin,
+  timer,
+}

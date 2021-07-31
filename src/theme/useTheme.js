@@ -1,8 +1,6 @@
-import React, { useState, useEffect, createContext } from 'react'
+import { useState, useEffect } from 'react'
 
-const ThemeContext = createContext()
-
-const ThemeProvider = ({ children }) => {
+export default function useTheme() {
   const [theme, setTheme] = useState('light')
   const [componentMounted, setComponentMounted] = useState(false)
 
@@ -29,17 +27,5 @@ const ThemeProvider = ({ children }) => {
     }
   }
 
-  return (
-    <ThemeContext.Provider
-      value={{
-        theme,
-        componentMounted,
-        toggleTheme,
-      }}
-    >
-      {children}
-    </ThemeContext.Provider>
-  )
+  return { theme, toggleTheme, componentMounted }
 }
-
-export { ThemeContext, ThemeProvider }
