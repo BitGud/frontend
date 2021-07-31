@@ -1,0 +1,1 @@
+require("D:/PROjects/Projects/Hackathon/BitGud/node_modules/gatsby/dist/utils/telemetry-server.js").default(52224)

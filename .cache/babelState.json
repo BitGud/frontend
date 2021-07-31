@@ -7,27 +7,27 @@
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
           "options": {
-            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\.cache\\caches\\gatsby-plugin-image"
+            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\.cache\\caches\\gatsby-plugin-image"
           }
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -48,27 +48,27 @@
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
           "options": {
-            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\.cache\\caches\\gatsby-plugin-image"
+            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\.cache\\caches\\gatsby-plugin-image"
           }
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -89,27 +89,27 @@
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
           "options": {
-            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\.cache\\caches\\gatsby-plugin-image"
+            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\.cache\\caches\\gatsby-plugin-image"
           }
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,
@@ -130,27 +130,27 @@
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\gatsby-plugin-image\\dist\\babel-plugin-parse-static-images.js",
           "options": {
-            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\.cache\\caches\\gatsby-plugin-image"
+            "cacheDir": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\.cache\\caches\\gatsby-plugin-image"
           }
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-optional-chaining\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-nullish-coalescing-operator\\lib\\index.js",
           "options": {}
         },
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\plugin-proposal-numeric-separator\\lib\\index.js",
           "options": {}
         }
       ],
       "presets": [
         {
-          "name": "D:\\PROjects\\Projects\\Hackathon\\GitGud\\aaa\\frontend\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
+          "name": "D:\\PROjects\\Projects\\Hackathon\\BitGud\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
             "plugins": [],
             "allExtensions": false,

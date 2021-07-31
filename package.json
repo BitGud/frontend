@@ -9,6 +9,11 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "babel-eslint": "^10.1.0",
+    "es-abstract": "^1.18.4",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-testing-library": "^4.10.1",
     "gatsby": "^3.10.2",
     "gatsby-plugin-gatsby-cloud": "^2.10.0",
     "gatsby-plugin-image": "^1.10.1",
@@ -19,11 +24,13 @@
     "gatsby-source-filesystem": "^3.10.0",
     "gatsby-theme-material-ui": "^2.0.1",
     "gatsby-transformer-sharp": "^3.10.0",
+    "jest": "^27.0.6",
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0"
   },
   "keywords": [
     "gatsby"
