@@ -1,18 +1,18 @@
-import { AppBar, Toolbar, Button, IconButton, Drawer, Link, MenuItem, Container } from '@material-ui/core'
+import { AppBar, Toolbar, Button, IconButton, Drawer, Link, MenuItem, Container, Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import React, { useState, useEffect } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
 import useStyles from './NavBarStyle'
 
-const headersData = [
+const headers = [
   {
     label: 'Dashboard',
-    href: '/',
+    href: '/dashboard',
   },
   {
-    label: 'Events',
-    href: '/',
+    label: 'Settings',
+    href: '/settings',
   },
   {
     label: 'Logout',
@@ -20,25 +20,8 @@ const headersData = [
   },
 ]
 
-const getMenuButtons = () => {
-  return headersData.map(({ label, href, color = 'inherit' }) => {
-    return (
-      <Button
-        {...{
-          key: label,
-          color,
-          to: href,
-          component: RouterLink,
-        }}
-      >
-        {label}
-      </Button>
-    )
-  })
-}
-
-function NavBar({ children }) {
-  const classes = useStyles()
+function NavBar() {
+  const styles = useStyles()
 
   const [state, setState] = useState({
     mobileView: false,
@@ -59,11 +42,28 @@ function NavBar({ children }) {
     window.addEventListener('resize', () => setResponsiveness())
   }, [])
 
-  const logo = <span className={classes.logo}>Profess</span>
+  const getMenuButtons = () => {
+    return headers.map(({ label, href }) => {
+      return (
+        <Link
+          className={styles.link}
+          {...{
+            key: label,
+            to: href,
+            component: RouterLink,
+          }}
+        >
+          {label}
+        </Link>
+      )
+    })
+  }
+
+  const logo = <Typography className={styles.logo}>BitGud</Typography>
 
   const displayDesktop = () => {
     return (
-      <Toolbar className={classes.toolBar}>
+      <Toolbar className={styles.toolBar}>
         {logo}
         <div>{getMenuButtons()}</div>
       </Toolbar>
@@ -71,17 +71,12 @@ function NavBar({ children }) {
   }
 
   const getDrawerChoices = () => {
-    return headersData.map(({ label, href }) => {
+    return headers.map(({ label, href }) => {
       return (
-        <Link
-          {...{
-            component: RouterLink,
-            to: href,
-            color: 'inherit',
-            key: label,
-          }}
-        >
-          <MenuItem>{label}</MenuItem>
+        <Link className={styles.link} href={href}>
+          <MenuItem>
+            <Typography>{label}</Typography>
+          </MenuItem>
         </Link>
       )
     })
@@ -92,7 +87,7 @@ function NavBar({ children }) {
     const handleDrawerClose = () => setState((prevState) => ({ ...prevState, drawerOpen: false }))
 
     return (
-      <Toolbar className={classes.toolBar}>
+      <Toolbar variant="dense">
         <Drawer
           {...{
             anchor: 'left',
@@ -100,7 +95,7 @@ function NavBar({ children }) {
             onClose: handleDrawerClose,
           }}
         >
-          <div className={classes.drawerContainer}>{getDrawerChoices()}</div>
+          <div className={styles.drawerContainer}>{getDrawerChoices()}</div>
         </Drawer>
 
         {logo}
@@ -122,7 +117,7 @@ function NavBar({ children }) {
 
   return (
     <Container maxWidth="sm">
-      <AppBar elevation={0} className={classes.navBar}>
+      <AppBar position="absolute" elevation={0}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
     </Container>
