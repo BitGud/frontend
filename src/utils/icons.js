@@ -12,6 +12,8 @@ import homePhonelove from '../assets/icons/phonelove.svg'
 import homeCode from '../assets/icons/code.svg'
 import homeCe from '../assets/icons/ce.svg'
 
+import github from '../assets/icons/github.png'
+
 export default {
   login,
   login2,
@@ -25,4 +27,5 @@ export default {
   homePhonelove,
   homeCode,
   homeCe,
+  github,
 }

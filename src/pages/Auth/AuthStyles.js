@@ -4,6 +4,9 @@ const useStyles = makeStyles((theme) => ({
   authContainer: {
     marginBottom: '10em',
   },
+  slider: {
+    margin: '10px',
+  },
   authTitle: {
     fontFamily: 'Share',
     fontSize: '4em',
@@ -13,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       margin: '2em 0',
     },
     [theme.breakpoints.only('sm')]: {
-      fontSize: '10em',
+      fontSize: '4em',
     },
   },
   authMediumImage: {
@@ -23,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
   authInputHelper: {
     fontFamily: 'Share',
     fontSize: '1.5em',
+  },
+  authInputHelperRegister: {
+    fontFamily: 'Share',
+    fontSize: '1.5em',
+    textAlign: 'center',
   },
   authLoginInput: {
     fontFamily: 'Share',
@@ -38,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   authRegisterInput: {
     fontFamily: 'Share',
     fontSize: '1.5em',
-    width: '18em',
+    width: '13em',
     borderRadius: '1em',
     outline: 'none',
     textDecoration: 'none',
@@ -47,12 +55,21 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '1em',
     marginBottom: '1.8em',
   },
-  runnerImage: {
+  runnerImg: {
     margin: '8em',
     width: '25em',
   },
   treeImg: {
     width: '15em',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '2em',
+      margin: '2em 0',
+      width: '8em',
+    },
+  },
+  githubImg: {
+    width: '2em',
+    margin: '0 0.3em',
   },
   authLoginBtn: {
     color: '#5F3C8A',
@@ -61,6 +78,21 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '1.5em',
     border: 'none',
     fontSize: '1em',
+
+    '&:hover': {
+      opacity: '0.7',
+      cursor: 'pointer',
+    },
+  },
+  accessGithubBtn: {
+    backgroundColor: '#CECECE',
+    padding: '1em 2em',
+    borderRadius: '1.5em',
+    border: 'none',
+    fontSize: '1em',
+    marginBottom: '2em',
+    display: 'flex',
+    alignItems: 'center',
 
     '&:hover': {
       opacity: '0.7',

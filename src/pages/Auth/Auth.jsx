@@ -17,7 +17,7 @@ function Auth(props) {
 
   return (
     <Container className={styles.authContainer} spacing={10} maxWidth="lg">
-      <Box m={2} display="flex" justifyContent="flex-end">
+      <Box className={styles.slider} display="flex" justifyContent="flex-end">
         <Button color="primary" variant="contained">
           Register
         </Button>
@@ -27,8 +27,9 @@ function Auth(props) {
           <Typography className={styles.authTitle}>LOGIN - BUM BUM BUM</Typography>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
-          <Button color="primary" variant="contained">
+          <Button class={styles.accessGithubBtn} variant="contained">
             Access with GitHub
+            <img className={styles.githubImg} alt="github" src={icons.github} />
           </Button>
         </Grid>
 
@@ -70,7 +71,7 @@ function Auth(props) {
         </Grid>
 
         <Grid container justifyContent="center" alignContent="center" m={4}>
-          <img className={styles.runnerImage} alt="login 2" src={icons.login2} />
+          <img className={styles.runnerImg} alt="login 2" src={icons.login2} />
         </Grid>
 
         <Grid container display="flex" justifyContent="flex-end">
@@ -84,9 +85,9 @@ function Auth(props) {
         </Grid>
 
         <Grid container alignContent="center" justifyContent="center" spacing={3}>
-          <Grid container direction="row" justifyContent="center" alignItems="center">
-            <div>
-              <Typography className={styles.authInputHelper}>Your name here</Typography>
+          <Grid item justifyContent="center" alignItems="center" md={12} xs={12}>
+            <Typography className={styles.authInputHelperRegister}>Your name here</Typography>
+            <Box display="flex" justifyContent="center">
               <TextField
                 className={styles.authRegisterInput}
                 variant="standard"
@@ -96,11 +97,11 @@ function Auth(props) {
                   disableUnderline: true,
                 }}
               />
-            </div>
+            </Box>
           </Grid>
-          <Grid container direction="row" justifyContent="center" alignItems="center">
-            <div>
-              <Typography className={styles.authInputHelper}>Your password here</Typography>
+          <Grid item justifyContent="center" alignItems="center" md={12} xs={12}>
+            <Typography className={styles.authInputHelperRegister}>Your password here</Typography>
+            <Box display="flex" justifyContent="center">
               <TextField
                 className={styles.authRegisterInput}
                 variant="standard"
@@ -110,11 +111,11 @@ function Auth(props) {
                   disableUnderline: true,
                 }}
               />
-            </div>
+            </Box>
           </Grid>
-          <Grid container direction="row" justifyContent="center" alignItems="center">
-            <div>
-              <Typography className={styles.authInputHelper}>Confirm your password</Typography>
+          <Grid item justifyContent="center" alignItems="center" md={12} xs={12}>
+            <Typography className={styles.authInputHelperRegister}>Confirm your password</Typography>
+            <Box display="flex" justifyContent="center">
               <TextField
                 className={styles.authRegisterInput}
                 variant="standard"
@@ -124,17 +125,18 @@ function Auth(props) {
                   disableUnderline: true,
                 }}
               />
-            </div>
+            </Box>
+          </Grid>
+          <Grid item justifyContent="center" alignItems="center">
+            <Button class={styles.authRegisterBtn} color="primary" variant="contained" onClick={login}>
+              Okay, go!
+            </Button>
           </Grid>
         </Grid>
 
-        <Grid container justifyContent="center">
-          <Button class={styles.authRegisterBtn} color="primary" variant="contained" onClick={login}>
-            Okay, go!
-          </Button>
+        <Grid item justifyContent="center" alignItems="center">
+          <img className={styles.treeImg} alt="login 3" src={icons.login3} />
         </Grid>
-
-        <img className={styles.treeImg} alt="login 3" src={icons.login3} />
       </Grid>
     </Container>
   )
