@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react'
-import { MuiThemeProvider } from '@material-ui/core/styles'
+import React, { useContext } from 'react'
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { Box, Switch } from '@material-ui/core'
 
