@@ -5,6 +5,7 @@ import './App.scss'
 
 import { HomePage, Auth } from '.'
 import { ErrorPage, Layout } from '../components'
+import withRoot from '../theme/withRoot'
 
 const App = () => {
   return (
@@ -18,4 +19,4 @@ const App = () => {
   )
 }
 
-export default App
+export default withRoot(App)
