@@ -36,6 +36,21 @@ const AuthProvider = (props) => {
     }
   }
 
+  const signInWithGithub = async () => {
+    try {
+      const provider = new firebase.auth.GithubAuthProvider()
+      const userCred = await firebase.auth().signInWithPopup(provider)
+      localStorage.setItem('uid', userCred.user.uid)
+      return Promise.resolve({
+        email: userCred.user.email,
+        uid: userCred.user.uid,
+        name: userCred.user.displayName,
+      })
+    } catch (err) {
+      return Promise.reject(err)
+    }
+  }
+
   const signUp = async (email, password) => {
     try {
       const userCred = await firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -67,6 +82,7 @@ const AuthProvider = (props) => {
     signIn,
     signOut,
     signUp,
+    signInWithGithub,
   }
 
   const { children } = props
