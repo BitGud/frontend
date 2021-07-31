@@ -1,7 +1,8 @@
 import React from 'react'
-import { icons } from '../../utils'
 
 import './Errors.scss'
+
+import { icons } from '../../utils'
 
 const ErrorPage = (props) => {
   return (

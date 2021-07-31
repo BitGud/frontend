@@ -3,13 +3,14 @@ import { Route, Switch } from 'react-router-dom'
 
 import './App.scss'
 
-import HomePage from './HomePage/HomePage'
+import { HomePage, Auth } from '.'
 import { ErrorPage, Layout } from '../components'
 
 const App = () => {
   return (
     <Layout>
       <Switch>
+        <Route exact path="/auth" component={Auth} />
         <Route exact path="/" component={HomePage} />
         <Route component={ErrorPage} />
       </Switch>
