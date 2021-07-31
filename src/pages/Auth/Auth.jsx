@@ -4,6 +4,8 @@ import { Grid, Switch } from '@material-ui/core'
 import icons from '../../utils/icons'
 import { firebase } from '../../instances'
 
+import AuthStyle from './AuthStyle'
+
 function Auth(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
