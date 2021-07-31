@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Grid, Switch } from '@material-ui/core'
 
+import axios from '../../instances/axios'
 import icons from '../../utils/icons'
 import { firebase } from '../../instances'
 
@@ -13,6 +14,15 @@ function Auth(props) {
     firebase.auth().signInWithEmailAndPassword(email, password)
   }
 
+  const addUser = async (payload) => {
+    try {
+      const result = await axios.post('user', payload)
+      console.log('result', result)
+    } catch (err) {
+      console.error('error adduser', err)
+    }
+  }
+
   const signInWithGithub = async () => {
     try {
       const provider = new firebase.auth.GithubAuthProvider()
@@ -20,6 +30,15 @@ function Auth(props) {
 
       const result = await firebase.auth().signInWithPopup(provider)
       console.log('result', result)
+
+      const payload = {
+        uid: result.user.uid,
+        displayName: result.user.displayName,
+        email: result.user.email,
+        photoUrl: result.user.photoURL,
+        githubUsername: result.additionalUserInfo.username ?? '',
+      }
+      await addUser(payload)
     } catch (err) {
       console.error('error github', err)
     }

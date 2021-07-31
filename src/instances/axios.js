@@ -10,7 +10,7 @@ instance.interceptors.request.use(
     if (firebase.auth().currentUser != null) {
       const idTokenfinal = await firebase.auth().currentUser.getIdToken()
       // eslint-disable-next-line no-param-reassign
-      config.headers['id-token'] = idTokenfinal
+      config.headers.Authorization = `Bearer ${idTokenfinal}`
     }
     return Promise.resolve(config)
   },
