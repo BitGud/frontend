@@ -1,53 +1,12 @@
 import React, { useState } from 'react'
-import { Container, Grid, makeStyles, Paper, Select, Typography, MenuItem, Button } from '@material-ui/core'
-import FormControl from '@material-ui/core/FormControl'
-import NativeSelect from '@material-ui/core/NativeSelect'
 import { useHistory } from 'react-router-dom'
+import { Container, Grid, Paper, Select, Typography, MenuItem, Button, FormControl } from '@material-ui/core'
+
+import useStyles from './SettingsStyles'
+
 import AntSwitch from '../../components/AntSwitch'
 import AntInput from '../../components/AntInput'
 
-const useStyles = makeStyles((theme) => ({
-  settingsContainer: {
-    marginTop: '300px',
-  },
-  settingsPaper: {
-    paddingTop: '40px',
-    paddingBottom: '40px',
-    borderRadius: '1em',
-    backgroundColor: '#e0e0e0',
-  },
-  settingsGap: {
-    margin: 'auto',
-  },
-  settingsTitle: {
-    fontSize: '5em',
-    fontFamily: 'Share',
-    textAlign: 'center',
-  },
-  settingsGroup: {
-    padding: '30px',
-  },
-  settingsField: {
-    fontSize: '3em',
-    fontFamily: 'Share',
-  },
-  settingsSelect: {
-    borderRadius: '1em',
-    justifyContent: 'center',
-    width: '20em',
-  },
-  settingsStart: {
-    margin: 'auto',
-    marginTop: '1em',
-    marginBottom: '3em',
-    padding: '0.6em 2em 0.6em 2em',
-    borderRadius: '1.5em 1em',
-    fontFamily: 'Share',
-    fontSize: '1.3em',
-    textTransform: 'none',
-    color: 'white',
-  },
-}))
 function Settings(props) {
   const styles = useStyles()
 
@@ -84,6 +43,21 @@ function Settings(props) {
     history.push('docs')
   }
 
+  const renderSelectOption = (cb) => {
+    const values = [10, 20, 30, 40, 50, 60]
+
+    return (
+      <Select value={commitGap} onChange={(e) => cb(e.target.value)} input={<AntInput />}>
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        {values.map((v) => (
+          <MenuItem value={v}>{v} Minutes</MenuItem>
+        ))}
+      </Select>
+    )
+  }
+
   return (
     <Container className={styles.settingsContainer} maxWidth="md">
       <Paper className={styles.settingsPaper}>
@@ -99,17 +73,7 @@ function Settings(props) {
           <Typography className={styles.settingsField}>Commit Gap</Typography>
           <Grid className={styles.settingsGap} />
           <FormControl className={styles.settingsSelect} variant="outlined" disabled={state1}>
-            <Select value={commitGap} onChange={(e) => setCommitGap(e.target.value)} input={<AntInput />}>
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>10 Minutes</MenuItem>
-              <MenuItem value={20}>20 Minutes</MenuItem>
-              <MenuItem value={30}>30 Minutes</MenuItem>
-              <MenuItem value={40}>40 Minutes</MenuItem>
-              <MenuItem value={50}>50 Minutes</MenuItem>
-              <MenuItem value={60}>60 Minutes</MenuItem>
-            </Select>
+            {renderSelectOption(setCommitGap)}
           </FormControl>
         </Grid>
 
@@ -122,22 +86,19 @@ function Settings(props) {
           <Typography className={styles.settingsField}>Commit Gap</Typography>
           <Grid className={styles.settingsGap} />
           <FormControl className={styles.settingsSelect} variant="outlined" disabled={state2}>
-            <Select value={commitGap2} onChange={(e) => setCommitGap2(e.target.value)} input={<AntInput />}>
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>10 Minutes</MenuItem>
-              <MenuItem value={20}>20 Minutes</MenuItem>
-              <MenuItem value={30}>30 Minutes</MenuItem>
-              <MenuItem value={40}>40 Minutes</MenuItem>
-              <MenuItem value={50}>50 Minutes</MenuItem>
-              <MenuItem value={60}>60 Minutes</MenuItem>
-            </Select>
+            {renderSelectOption(setCommitGap2)}
           </FormControl>
         </Grid>
-        <Button className={styles.settingsStart} onClick={goToDocs}>
-          How to Start
-        </Button>
+        <Grid container justifyContent="center" alignContent="center">
+          <Button className={styles.settingsStart} onClick={goToDocs}>
+            Add walet
+          </Button>
+        </Grid>
+        <Grid container justifyContent="center" alignContent="center">
+          <Button className={styles.settingsStart} onClick={goToDocs}>
+            How to Start
+          </Button>
+        </Grid>
       </Grid>
     </Container>
   )

@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     width: '25em',
   },
   homeTitle: {
+    textAlign: 'center',
     fontFamily: 'Share',
     fontSize: '5em',
     [theme.breakpoints.only('sm')]: {
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   homeSubtitle: {
     fontFamily: 'Share',
     fontSize: '1.3em',
+    textAlign: 'center',
     [theme.breakpoints.only('sm')]: {
       fontSize: '2em',
     },

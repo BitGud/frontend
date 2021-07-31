@@ -24,7 +24,7 @@ function HomePage() {
       <Container className={styles.homeContainer} spacing={10} maxWidth="md">
         <Grid container alignContent="center">
           <Grid item container md={6} xs={12} direction="column">
-            <Grid>
+            <Grid item justifyContent="center" alignItems="center">
               <Typography className={styles.homeTitle}>BitGud</Typography>
               <Typography className={styles.homeSubtitle}>Bring your time back to commit!</Typography>
             </Grid>
@@ -50,8 +50,8 @@ function HomePage() {
           <Typography className={styles.homeHelp}>WE CAN HELP!</Typography>
 
           <Grid>
-            <img className={styles.homeSmall} src={icons.homeCat2} alt="home-cat-2" />
-            <img className={styles.homeSmall} src={icons.homePhonelove} alt="home-phone" />
+            <img className={styles.homeSmall} src={icons.homePhoneLove} alt="home-phone" />
+            <img className={styles.homeSmall} src={icons.homeCatWithPencil} alt="home-cat-2" />
           </Grid>
         </Grid>
         <Grid container alignContent="center">
@@ -66,7 +66,7 @@ function HomePage() {
           </Grid>
           <Grid item md={4} xs={12}>
             <Grid container justifyContent="center">
-              <img className={styles.homeSmallCircle} src={icons.homeCe} alt="home-raspberry" />
+              <img className={styles.homeSmallCircle} src={icons.ce} alt="home-raspberry" />
             </Grid>
             <Grid>
               <Typography className={styles.homeSmallText}>Getting rewards</Typography>

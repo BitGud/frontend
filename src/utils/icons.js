@@ -15,7 +15,8 @@ import timer from '../assets/icons/timer.svg'
 import homeCat from '../assets/icons/home-cat.png'
 import homeRaspberry from '../assets/icons/raspberry.svg'
 import homeThinking from '../assets/icons/thinking.svg'
-import homePhonelove from '../assets/icons/phonelove.svg'
+import homeCatWithPencil from '../assets/icons/catWithPencil.svg'
+import homePhoneLove from '../assets/icons/phoneLove.svg'
 import homeCode from '../assets/icons/code.svg'
 
 import github from '../assets/icons/github.png'
@@ -29,8 +30,8 @@ export default {
   homeCat,
   homeRaspberry,
   homeThinking,
-  homeCat2: cat,
-  homePhonelove,
+  homeCatWithPencil,
+  homePhoneLove,
   homeCode,
   github,
   gamer,
