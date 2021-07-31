@@ -50136,7 +50136,7 @@ var plugins = [{
     "cache_busting_mode": "query",
     "crossOrigin": "anonymous",
     "include_favicon": true,
-    "cacheDigest": "c0b22d6e468a6148aa198dd0c5e5f2d9"
+    "cacheDigest": "cebbabf6702cacd1604c38bc7c3278b2"
   }
 }, {
   name: 'gatsby-theme-material-ui-top-layout',
