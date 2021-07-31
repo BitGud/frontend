@@ -7,15 +7,16 @@ import './assets/styles/Global.scss'
 import App from './pages/App'
 import reportWebVitals from './reportWebVitals'
 import { AuthProvider } from './context'
+import { ThemeProvider } from './theme/useTheme'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider>
     <BrowserRouter>
       <AuthProvider>
         <App />
       </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </ThemeProvider>,
   document.getElementById('root')
 )
 

@@ -9,8 +9,9 @@ import homeCat2 from '../../assets/icons/cat.svg'
 import homePhonelove from '../../assets/icons/phonelove.svg'
 import homeCode from '../../assets/icons/code.svg'
 import homeCe from '../../assets/icons/ce.svg'
+import useTheme from '../../theme/useTheme'
 
-const useStyles = makeStyles((gittheme) => ({
+const useStyles = makeStyles((theme) => ({
   homeContainer: {
     marginTop: '200px',
   },
@@ -19,6 +20,7 @@ const useStyles = makeStyles((gittheme) => ({
     width: '25em',
   },
   homeTitle: {
+    textAlign: 'center',
     fontFamily: 'Share',
     fontSize: '5em',
   },
@@ -29,6 +31,7 @@ const useStyles = makeStyles((gittheme) => ({
     width: '27em',
   },
   homeSubtitle: {
+    textAlign: 'center',
     fontFamily: 'Share',
     fontSize: '1.3em',
   },
@@ -75,6 +78,7 @@ const useStyles = makeStyles((gittheme) => ({
     borderRadius: '10em',
     height: '10em',
     width: '10em',
+    marginBottom: '1em',
     backgroundColor: '#E7E7E7',
   },
   homeStartBtn: {
@@ -82,7 +86,6 @@ const useStyles = makeStyles((gittheme) => ({
     marginTop: '1em',
     marginBottom: '3em',
     padding: '0.6em 2em 0.6em 2em',
-    background: 'linear-gradient(90deg, #501D8F 58.85%, #825BB1 100%)',
     borderRadius: '1.5em 1em',
     fontFamily: 'Share',
     fontSize: '1.3em',
@@ -96,16 +99,18 @@ function HomePage(props) {
     <>
       <Container className={styles.homeContainer} spacing={10} maxWidth="md">
         <Grid container alignContent="center">
-          <Grid container md={6} xs={12} justifyContent="center" alignContent="center">
-            <Typography className={styles.homeTitle}>BitGud</Typography>
-            <Typography className={styles.homeSubtitle}>Bring your time back to commit!</Typography>
-            <Grid container xs={12}>
+          <Grid item container md={6} xs={12} direction="column">
+            <Grid>
+              <Typography className={styles.homeTitle}>BitGud</Typography>
+              <Typography className={styles.homeSubtitle}>Bring your time back to commit!</Typography>
+            </Grid>
+            <Grid container>
               <Button color="primary" variant="contained" className={styles.homeStartBtn}>
                 Get Started
               </Button>
             </Grid>
           </Grid>
-          <Grid container md={6} xs={12} justifyContent="center">
+          <Grid item container md={6} xs={12} justifyContent="center">
             <img className={styles.homeCat} src={homeCat} alt="home-cat" />
           </Grid>
         </Grid>
@@ -120,35 +125,41 @@ function HomePage(props) {
           <img className={styles.homeThinking} src={homeThinking} alt="home-thinking" />
           <Typography className={styles.homeHelp}>WE CAN HELP!</Typography>
 
-          <Grid justifyContent="center" alignContent="center">
+          <Grid>
             <img className={styles.homeSmall} src={homeCat2} alt="home-cat-2" />
             <img className={styles.homeSmall} src={homePhonelove} alt="home-phone" />
           </Grid>
         </Grid>
         <Grid container alignContent="center">
-          <Grid container md={4} xs={12} justifyContent="center">
-            <img className={styles.homeSmallImage} src={homeRaspberry} alt="home-raspberry" />
-            <Grid justifyContext="center" alignContent="center">
+          <Grid item md={4} xs={12}>
+            <Grid container justifyContent="center">
+              <img className={styles.homeSmallImage} src={homeRaspberry} alt="home-raspberry" />
+            </Grid>
+            <Grid>
               <Typography className={styles.homeSmallText}>Get Reminder</Typography>
               <Typography className={styles.homeSmallSubText}>With raspberry toys</Typography>
             </Grid>
           </Grid>
-          <Grid container md={4} xs={12} justifyContent="center">
-            <img className={styles.homeSmallCircle} src={homeCe} alt="home-raspberry" />
-            <Grid justifyContext="center" alignContent="center">
+          <Grid item md={4} xs={12}>
+            <Grid container justifyContent="center">
+              <img className={styles.homeSmallCircle} src={homeCe} alt="home-raspberry" />
+            </Grid>
+            <Grid>
               <Typography className={styles.homeSmallText}>Getting rewards</Typography>
               <Typography className={styles.homeSmallSubText}>with some cryptocurrencies</Typography>
             </Grid>
           </Grid>
-          <Grid container md={4} xs={12} justifyContent="center">
-            <img className={styles.homeSmallImage} src={homeCode} alt="home-code" />
-            <Grid justifyContext="center" alignContent="center">
+          <Grid item md={4} xs={12}>
+            <Grid container justifyContent="center">
+              <img className={styles.homeSmallImage} src={homeCode} alt="home-code" />
+            </Grid>
+            <Grid>
               <Typography className={styles.homeSmallText}>Become a pro</Typography>
               <Typography className={styles.homeSmallSubText}>by focusing on important tasks</Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid container xs={12} style={{ marginBottom: '10em' }}>
+        <Grid container style={{ marginBottom: '10em' }}>
           <Button color="primary" variant="contained" className={styles.homeStartBtn}>
             Get Started
           </Button>

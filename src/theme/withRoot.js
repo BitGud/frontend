@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react'
+import React, { useContext } from 'react'
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
-import useTheme from './useTheme'
+import { ThemeContext } from './useTheme'
 
 const darkTheme = createTheme({
   overrides: {
@@ -39,6 +39,9 @@ const darkTheme = createTheme({
 
 const lightTheme = createTheme({
   overrides: {
+    typography: {
+      fontFamily: '"Share", "Roboto", "Helvetica", "Arial", sans-serif',
+    },
     MuiCssBaseline: {
       '@global': {
         body: {
@@ -68,7 +71,7 @@ const lightTheme = createTheme({
 
 function withRoot(Component) {
   function WithRoot(props) {
-    const { theme, toggleTheme, componentMounted } = useTheme()
+    const { theme, toggleTheme, componentMounted } = useContext(ThemeContext)
 
     if (!componentMounted) {
       return <div />

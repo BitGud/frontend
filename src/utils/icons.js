@@ -3,5 +3,12 @@ import login2 from '../assets/icons/login2.png'
 import login3 from '../assets/icons/login3.png'
 import error from '../assets/icons/error.png'
 import error2 from '../assets/icons/error2.png'
+import gamer from '../assets/icons/gamer.svg'
+import cat from '../assets/icons/cat.svg'
+import sun from '../assets/icons/sun.svg'
+import ce from '../assets/icons/ce.svg'
+import coin from '../assets/icons/coin.svg'
+import cloud from '../assets/icons/cloud.svg'
+import timer from '../assets/icons/timer.svg'
 
-export default { login, login2, login3, error, error2 }
+export default { login, login2, login3, error, error2, gamer, cat, sun, cloud, ce, coin, timer }
