@@ -1,13 +1,37 @@
 import React, { useState } from 'react'
 import { Grid, Switch } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import InputLabel from '@material-ui/core/InputLabel'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import FormControl from '@material-ui/core/FormControl'
 import NativeSelect from '@material-ui/core/NativeSelect'
 
 function Settings(props) {
   const [commitGap, setCommitGap] = useState('')
+  const [commitGap2, setCommitGap2] = useState('')
+  const [state1, setState1] = useState(false)
+  const [checked1, setChecked1] = useState(false)
+  const [state2, setState2] = useState(false)
+  const [checked2, setChecked2] = useState(false)
+
+  function flippedSwitch1(event) {
+    if (checked1 === true) {
+      setChecked1(false)
+      setState2(false)
+    } else {
+      setChecked1(true)
+      setState2(true)
+    }
+  }
+
+  function flippedSwitch2() {
+    if (checked2 === true) {
+      setChecked2(false)
+      setState1(false)
+    } else {
+      setChecked2(true)
+      setState1(true)
+    }
+  }
 
   return (
     <div>
@@ -15,11 +39,11 @@ function Settings(props) {
       <Grid container>
         <Grid item>
           <div>I commit too much</div>
-          <Switch defaultChecked color="default" inputProps={{ 'aria-label': 'checkbox with default color' }} />
+          <Switch disabled={state1} color="default" onChange={flippedSwitch1} />
         </Grid>
         <Grid item>
           <div>Commit Gap</div>
-          <FormControl>
+          <FormControl disabled={state1}>
             <NativeSelect
               value={commitGap}
               onChange={(e) => setCommitGap(e.target.value)}
@@ -36,20 +60,19 @@ function Settings(props) {
               <option value={50}>50 Minutes</option>
               <option value={60}>60 Minutes</option>
             </NativeSelect>
-            <FormHelperText>Commit gap</FormHelperText>
           </FormControl>
         </Grid>
 
         <Grid item>
           <div>I commit too much</div>
-          <Switch defaultChecked color="default" inputProps={{ 'aria-label': 'checkbox with default color' }} />
+          <Switch disabled={state2} color="default" onChange={flippedSwitch2} />
         </Grid>
         <Grid item>
           <div>Commit Gap</div>
-          <FormControl>
+          <FormControl disabled={state2}>
             <NativeSelect
-              value={commitGap}
-              onChange={(e) => setCommitGap(e.target.value)}
+              value={commitGap2}
+              onChange={(e) => setCommitGap2(e.target.value)}
               inputProps={{
                 name: 'Commit Gap',
                 id: 'commit-Gap',
@@ -63,7 +86,6 @@ function Settings(props) {
               <option value={50}>50 Minutes</option>
               <option value={60}>60 Minutes</option>
             </NativeSelect>
-            <FormHelperText>Commit gap</FormHelperText>
           </FormControl>
         </Grid>
       </Grid>
