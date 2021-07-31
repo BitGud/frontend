@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Grid, Switch } from '@material-ui/core'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormHelperText from '@material-ui/core/FormHelperText'
 import FormControl from '@material-ui/core/FormControl'
 import NativeSelect from '@material-ui/core/NativeSelect'
+import { useHistory } from 'react-router-dom'
 
 function Settings(props) {
   const [commitGap, setCommitGap] = useState('')
@@ -31,6 +30,12 @@ function Settings(props) {
       setChecked2(true)
       setState1(true)
     }
+  }
+
+  const history = useHistory()
+
+  const goToDocs = () => {
+    history.push('docs')
   }
 
   return (
@@ -89,6 +94,9 @@ function Settings(props) {
           </FormControl>
         </Grid>
       </Grid>
+      <button type="button" onClick={goToDocs}>
+        How to Start
+      </button>
     </div>
   )
 }
