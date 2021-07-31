@@ -5,6 +5,9 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 const theme = createMuiTheme({
   overrides: {
+    typography: {
+      fontFamily: '"Share", "Roboto", "Helvetica", "Arial", sans-serif',
+    },
     MuiCssBaseline: {
       '@global': {
         body: {
