@@ -1,7 +1,6 @@
 {
   "env": {
     "browser": true,
-    "jest/globals": true,
     "es6": true
   },
   "ignorePatterns": ["node_modules/**/*"],
@@ -19,13 +18,5 @@
       }
     ]
   },
-  "extends": [
-    "react-app",
-    "react-app/jest",
-    "airbnb",
-    "plugin:jsx-a11y/recommended",
-    "plugin:prettier/recommended",
-    "eslint:recommended",
-    "plugin:jest/recommended"
-  ]
+  "extends": ["react-app", "react-app/jest", "airbnb", "plugin:jsx-a11y/recommended", "plugin:prettier/recommended"]
 }

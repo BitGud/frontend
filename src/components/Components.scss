@@ -1,0 +1,61 @@
+@import '../assets/styles/Global.scss';
+
+.container {
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.toolbar {
+  background-color: $clr-dark;
+  display: flex;
+  justify-content: space-between;
+  height: 15vh;
+  position: relative;
+  border-bottom: 3px #47bfaf solid;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  width: 30vw;
+}
+
+.logo {
+  min-width: 7rem;
+}
+
+.find-vet {
+  flex-grow: 1;
+  width: 40vw;
+  margin: 0 1rem;
+}
+
+@media (min-width: 900px) {
+  .logo {
+    min-width: 8rem;
+    margin-left: 2rem;
+  }
+
+  .find-vet {
+    width: fit-content;
+    flex-grow: 0;
+    margin: auto 4rem;
+  }
+}
+
+.back-button {
+  background-color: inherit;
+  display: flex;
+  justify-content: flex-start;
+
+  :hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.img-button {
+  max-width: 3.5vw;
+}
