@@ -8,6 +8,7 @@
 
 .messageContainer {
   @include flexCenterColumn();
+  margin-top: 10rem;
 
   .notFoundText {
     margin-bottom: 2rem;

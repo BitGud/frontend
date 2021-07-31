@@ -1,5 +1,6 @@
-import Layout from './Layout'
+import NavBar from './NavBar'
 import SearchBar from './SearchBar'
 import ErrorPage from './Errors/ErrorPage'
+import Layout from './Layout'
 
-export { Layout, SearchBar, ErrorPage }
+export { NavBar, SearchBar, ErrorPage, Layout }

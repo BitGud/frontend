@@ -7,7 +7,6 @@ const ErrorPage = (props) => {
   return (
     <div className="messageContainer">
       <h1 className="notFoundText">Oh no, the router cannot be found</h1>
-      <img className="largeIcon" src={icons.notFound} alt="Not found" />
     </div>
   )
 }

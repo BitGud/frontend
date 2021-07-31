@@ -6,7 +6,7 @@ import './App.scss'
 import HomePage from './HomePage/HomePage'
 import { ErrorPage, Layout } from '../components'
 
-const App = (props) => {
+const App = () => {
   return (
     <Layout>
       <Switch>
