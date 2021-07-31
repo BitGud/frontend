@@ -1,11 +1,10 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { Button, Container, Grid, Typography, Box, Switch } from '@material-ui/core'
+import { Button, Container, Grid, Typography, Box } from '@material-ui/core'
 
 import useStyles from './HomePageStyles'
 
 import icons from '../../utils/icons'
-import useTheme from '../../theme/useTheme'
 
 function HomePage() {
   const history = useHistory()
@@ -16,7 +15,7 @@ function HomePage() {
   }
 
   return (
-    <div>
+    <>
       <Box m={2} display="flex" justifyContent="flex-end">
         <Button color="primary" variant="contained" onClick={goToAuth}>
           Get Started
@@ -33,7 +32,7 @@ function HomePage() {
               </Button>
             </Grid>
           </Grid>
-          <Grid container md={6} xs={12} justifyContent="center">
+          <Grid item md={6} xs={12} justifyContent="center">
             <img className={styles.homeCat} src={icons.homeCat} alt="home-cat" />
           </Grid>
         </Grid>
@@ -82,7 +81,7 @@ function HomePage() {
           </Button>
         </Grid>
       </Container>
-    </div>
+    </>
   )
 }
 

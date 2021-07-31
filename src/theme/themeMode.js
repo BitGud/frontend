@@ -48,10 +48,13 @@ const getThemeMode = (theme = true) => {
           },
         },
       },
-      MuiTypography: {
+      MuiTextField: {
         root: {
-          fontFamily: '"Share", "Roboto", "Helvetica", "Arial", sans-serif',
+          backgroundColor: theme ? '#CFCFCF' : '#E1E1E1',
         },
+      },
+      typography: {
+        fontFamily: '"Share", "Roboto", "Helvetica", "Arial", sans-serif',
       },
     },
   })
