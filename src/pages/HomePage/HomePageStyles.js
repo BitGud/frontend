@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1em',
     marginBottom: '3em',
     padding: '0.6em 2em 0.6em 2em',
-    background: 'linear-gradient(90deg, #501D8F 58.85%, #825BB1 100%)',
     borderRadius: '1.5em 1em',
     fontFamily: 'Share',
     fontSize: '1.3em',
