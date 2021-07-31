@@ -1,4 +1,4 @@
-import { firebase, socket } from './instances'
+import firebase from './instances'
 import axios from './axios'
 
-export { firebase, socket, axios }
+export { firebase, axios }

@@ -69,6 +69,8 @@ const AuthProvider = (props) => {
     signUp,
   }
 
+  console.log(obj)
+
   const { children } = props
 
   return <AuthContext.Provider value={obj}>{children}</AuthContext.Provider>
