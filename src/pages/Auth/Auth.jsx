@@ -9,7 +9,6 @@ function Auth(props) {
   const [password, setPassword] = useState('')
 
   function login() {
-    console.log('login function')
     firebase.auth().signInWithEmailAndPassword(email, password)
   }
 
