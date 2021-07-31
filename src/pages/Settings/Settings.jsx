@@ -81,7 +81,7 @@ function Settings(props) {
   const history = useHistory()
 
   const goToDocs = () => {
-    history.push('docs')
+    history.push('/docs')
   }
 
   return (
