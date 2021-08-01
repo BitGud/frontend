@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
-import { Grid, Switch } from '@material-ui/core'
-import FormControl from '@material-ui/core/FormControl'
-import NativeSelect from '@material-ui/core/NativeSelect'
 import { useHistory } from 'react-router-dom'
+import { Container, Grid, Paper, Select, Typography, MenuItem, Button, FormControl } from '@material-ui/core'
+
+import useStyles from './SettingsStyles'
+
+import AntSwitch from '../../components/AntSwitch'
+import AntInput from '../../components/AntInput'
 
 function Settings(props) {
+  const styles = useStyles()
+
   const [commitGap, setCommitGap] = useState('')
   const [commitGap2, setCommitGap2] = useState('')
   const [state1, setState1] = useState(false)
@@ -38,66 +43,64 @@ function Settings(props) {
     history.push('docs')
   }
 
+  const renderSelectOption = (cb) => {
+    const values = [10, 20, 30, 40, 50, 60]
+
+    return (
+      <Select value={commitGap} onChange={(e) => cb(e.target.value)} input={<AntInput />}>
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        {values.map((v) => (
+          <MenuItem value={v}>{v} Minutes</MenuItem>
+        ))}
+      </Select>
+    )
+  }
+
   return (
-    <div>
-      <h1 className="settingsTitle">Settings</h1>
+    <Container className={styles.settingsContainer} maxWidth="md">
+      <Paper className={styles.settingsPaper}>
+        <Typography className={styles.settingsTitle}>Settings</Typography>
+      </Paper>
       <Grid container>
-        <Grid item>
-          <div>I commit too much</div>
-          <Switch disabled={state1} color="default" onChange={flippedSwitch1} />
+        <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
+          <Typography className={styles.settingsField}>I commit too much</Typography>
+          <Grid className={styles.settingsGap} />
+          <AntSwitch disabled={state1} color="default" onChange={flippedSwitch1} />
         </Grid>
-        <Grid item>
-          <div>Commit Gap</div>
-          <FormControl disabled={state1}>
-            <NativeSelect
-              value={commitGap}
-              onChange={(e) => setCommitGap(e.target.value)}
-              inputProps={{
-                name: 'Commit Gap',
-                id: 'commit-Gap',
-              }}
-            >
-              <option aria-label="None" value="" />
-              <option value={10}>10 Minutes</option>
-              <option value={20}>20 Minutes</option>
-              <option value={30}>30 Minutes</option>
-              <option value={40}>40 Minutes</option>
-              <option value={50}>50 Minutes</option>
-              <option value={60}>60 Minutes</option>
-            </NativeSelect>
+        <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
+          <Typography className={styles.settingsField}>Commit Gap</Typography>
+          <Grid className={styles.settingsGap} />
+          <FormControl className={styles.settingsSelect} variant="outlined" disabled={state1}>
+            {renderSelectOption(setCommitGap)}
           </FormControl>
         </Grid>
 
-        <Grid item>
-          <div>I commit too much</div>
-          <Switch disabled={state2} color="default" onChange={flippedSwitch2} />
+        <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
+          <Typography className={styles.settingsField}>I commit too much</Typography>
+          <Grid className={styles.settingsGap} />
+          <AntSwitch disabled={state2} color="default" onChange={flippedSwitch2} />
         </Grid>
-        <Grid item>
-          <div>Commit Gap</div>
-          <FormControl disabled={state2}>
-            <NativeSelect
-              value={commitGap2}
-              onChange={(e) => setCommitGap2(e.target.value)}
-              inputProps={{
-                name: 'Commit Gap',
-                id: 'commit-Gap',
-              }}
-            >
-              <option aria-label="None" value="" />
-              <option value={10}>10 Minutes</option>
-              <option value={20}>20 Minutes</option>
-              <option value={30}>30 Minutes</option>
-              <option value={40}>40 Minutes</option>
-              <option value={50}>50 Minutes</option>
-              <option value={60}>60 Minutes</option>
-            </NativeSelect>
+        <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
+          <Typography className={styles.settingsField}>Commit Gap</Typography>
+          <Grid className={styles.settingsGap} />
+          <FormControl className={styles.settingsSelect} variant="outlined" disabled={state2}>
+            {renderSelectOption(setCommitGap2)}
           </FormControl>
         </Grid>
+        <Grid container justifyContent="center" alignContent="center">
+          <Button className={styles.settingsStart} onClick={goToDocs}>
+            Add walet
+          </Button>
+        </Grid>
+        <Grid container justifyContent="center" alignContent="center">
+          <Button className={styles.settingsStart} onClick={goToDocs}>
+            How to Start
+          </Button>
+        </Grid>
       </Grid>
-      <button type="button" onClick={goToDocs}>
-        How to Start
-      </button>
-    </div>
+    </Container>
   )
 }
 

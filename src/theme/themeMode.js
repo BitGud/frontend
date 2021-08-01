@@ -53,6 +53,20 @@ const getThemeMode = (theme = true) => {
           backgroundColor: theme ? '#CFCFCF' : '#E1E1E1',
         },
       },
+      MuiToolbar: {
+        root: {
+          backgroundColor: theme ? '#EAEAEA' : '#1E232D',
+          color: theme ? '#54585F' : '#C4C4C4',
+          position: 'relative',
+          width: '80vw',
+        },
+      },
+      MuiAppBar: {
+        root: {
+          width: '80vw',
+          top: '10px',
+        },
+      },
       typography: {
         fontFamily: '"Share", "Roboto", "Helvetica", "Arial", sans-serif',
       },

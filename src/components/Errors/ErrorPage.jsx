@@ -1,12 +1,13 @@
 import React from 'react'
-import { Grid, Container, Typography } from '@material-ui/core'
+import { Grid, Typography, Container } from '@material-ui/core'
 
 import useStyles from './ErrorStyles'
 
-import icons from '../../utils/icons'
+import { icons } from '../../utils'
 
 const ErrorPage = (props) => {
   const styles = useStyles()
+
   return (
     <Container className={styles.errorContainer} alignContent="center" spacing={10} maxWidth="md">
       <Typography className={styles.errorTitle}>Uh oh!</Typography>
