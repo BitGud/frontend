@@ -1,8 +1,8 @@
 import login from '../assets/icons/login.png'
 import login2 from '../assets/icons/login2.png'
 import login3 from '../assets/icons/login3.png'
-import error from '../assets/icons/error.png'
-import error2 from '../assets/icons/error2.png'
+import errorBubbles from '../assets/icons/errorBubbles.png'
+import errorSadMessage from '../assets/icons/errorSadMessage.png'
 import gamer from '../assets/icons/gamer.svg'
 
 import cat from '../assets/icons/cat.svg'
@@ -15,7 +15,8 @@ import timer from '../assets/icons/timer.svg'
 import homeCat from '../assets/icons/home-cat.png'
 import homeRaspberry from '../assets/icons/raspberry.svg'
 import homeThinking from '../assets/icons/thinking.svg'
-import homePhonelove from '../assets/icons/phonelove.svg'
+import homeCatWithPencil from '../assets/icons/catWithPencil.svg'
+import homePhoneLove from '../assets/icons/phoneLove.svg'
 import homeCode from '../assets/icons/code.svg'
 
 import github from '../assets/icons/github.png'
@@ -24,13 +25,13 @@ export default {
   login,
   login2,
   login3,
-  error,
-  error2,
+  errorBubbles,
+  errorSadMessage,
   homeCat,
   homeRaspberry,
   homeThinking,
-  homeCat2: cat,
-  homePhonelove,
+  homeCatWithPencil,
+  homePhoneLove,
   homeCode,
   github,
   gamer,
