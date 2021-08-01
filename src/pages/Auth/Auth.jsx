@@ -28,8 +28,8 @@ function Auth(props) {
 
   return (
     <Container className={styles.authContainer} spacing={10} maxWidth="lg">
-      <Box className={styles.slider} display="flex" justifyContent="flex-end">
-        <Button color="primary" variant="contained">
+      <Box className={styles.slider} display="flex" justifyContent="flex-end" id="Login">
+        <Button color="primary" variant="contained" href="#Register">
           Register
         </Button>
       </Box>
@@ -86,12 +86,12 @@ function Auth(props) {
         </Grid>
 
         <Grid container display="flex" justifyContent="flex-end">
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" href="#Login">
             Login
           </Button>
         </Grid>
 
-        <Grid container justifyContent="center" alignContent="center">
+        <Grid container justifyContent="center" alignContent="center" id="Register">
           <Typography className={styles.authTitle}>REGISTER HERE ^^</Typography>
         </Grid>
 
