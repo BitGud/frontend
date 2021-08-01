@@ -2,9 +2,8 @@ import React from 'react'
 import { Grid, Typography, Container } from '@material-ui/core'
 
 import useStyles from './ErrorStyles'
-import './Errors.scss'
 
-import icons from '../../utils/icons'
+import { icons } from '../../utils'
 
 const ErrorPage = (props) => {
   const styles = useStyles()
@@ -16,12 +15,6 @@ const ErrorPage = (props) => {
       <Grid container alignContent="center" justifyContent="center" spacing={1}>
         <img className={styles.errorImage} alt="error bubbles" src={icons.errorBubbles} />
         <img className={styles.errorImage} alt="error sad message" src={icons.errorSadMessage} />
-        {/* <Grid item md={6} xs={12}>
-          <img className={styles.errorImage} alt="error bubbles" src={icons.errorBubbles} />
-        </Grid>
-        <Grid item md={6} xs={12}>
-          <img className={styles.errorImage} alt="error sad message" src={icons.errorSadMessage} />
-        </Grid> */}
       </Grid>
     </Container>
   )
