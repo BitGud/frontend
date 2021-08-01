@@ -71,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
   },
   homeSmallCircle: {
     borderRadius: '10em',
-    height: '10em',
-    width: '10em',
+    height: '11em',
+    width: '11em',
     backgroundColor: '#E7E7E7',
   },
   homeStartBtn: {
