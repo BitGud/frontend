@@ -55,13 +55,16 @@ const getThemeMode = (theme = true) => {
       },
       MuiToolbar: {
         root: {
-          backgroundColor: theme ? 'white' : '#1E232D',
+          backgroundColor: theme ? '#EAEAEA' : '#1E232D',
           color: theme ? '#54585F' : '#C4C4C4',
+          position: 'relative',
+          width: '80vw',
         },
       },
       MuiAppBar: {
         root: {
-          zIndex: '-10',
+          width: '80vw',
+          top: '10px',
         },
       },
       typography: {
