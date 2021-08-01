@@ -8,15 +8,15 @@ import useStyles from './NavBarStyle'
 const headers = [
   {
     label: 'Dashboard',
-    href: '#/dashboard',
+    href: 'dashboard',
   },
   {
     label: 'Settings',
-    href: '#/settings',
+    href: 'settings',
   },
   {
     label: 'Docs',
-    href: '#/docs',
+    href: 'docs',
   },
   {
     label: 'Logout',
