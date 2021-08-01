@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Button, Paper, Container, Grid, makeStyles, Typography } from '@material-ui/core'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
+import moment from 'moment'
 import icons from '../../utils/icons'
+import axios from '../../instances/axios'
 
 const useStyles = makeStyles((theme) => ({
   dashboardContainer: {
@@ -100,6 +102,23 @@ const data = [
 
 const Dashboard = () => {
   const styles = useStyles()
+  const [dashboardData, setDashboardData] = useState({
+    shocked: 0,
+    lastShock: moment().subtract(10, 'minutes').toDate(),
+    rewards: 0.0,
+  })
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const responseData = await (await axios.get('/user/dashboard')).data
+        setDashboardData(responseData)
+      } catch (err) {
+        console.error('error getData', err)
+      }
+    }
+    getData()
+  }, [])
 
   return (
     <Container className={styles.dashboardContainer} maxWidth="md" direction="col">
@@ -114,25 +133,25 @@ const Dashboard = () => {
         <Grid container justifyContent="center">
           <Grid item className={styles.dashboardTile} md={3} xs={12}>
             <Typography className={styles.dashboardTileSubtitle}>Getting shocked</Typography>
-            <Tile src={icons.sun} alt="sun" text="1" />
-            <Tile src={icons.cloud} alt="cloud" text="12" />
+            {/* <Tile src={icons.sun} alt="sun" text="1" /> */}
+            <Tile src={icons.sun} alt="cloud" text={dashboardData?.shocked ?? 10} />
           </Grid>
           <Grid item md={1} />
           <Grid item className={styles.dashboardTile} md={3} xs={12}>
             <Typography className={styles.dashboardTileSubtitle}>Last shock</Typography>
-            <Tile src={icons.timer} alt="timer" text="13:30" />
-            <Tile src={icons.timer} alt="timer" text="13:20" />
+            {/* <Tile src={icons.timer} alt="timer" text="13:30" /> */}
+            <Tile src={icons.timer} alt="timer" text={moment(dashboardData?.lastShock ?? new Date()).format('hh:ss')} />
           </Grid>
           <Grid item md={1} />
           <Grid item className={styles.dashboardTile} md={3} xs={12}>
             <Typography className={styles.dashboardTileSubtitle}>Rewards</Typography>
-            <Tile src={icons.coin} alt="coin" text="0.3 CEN" />
-            <Tile src={icons.coin} alt="coin" text="0.01 CEN" />
+            {/* <Tile src={icons.coin} alt="coin" text="0.3 CEN" /> */}
+            <Tile src={icons.coin} alt="coin" text={`${dashboardData?.rewards ?? 0.3} CEN`} />
           </Grid>
         </Grid>
       </Grid>
 
-      <Typography className={styles.dashboardSubTitle}>Repo A</Typography>
+      <Typography className={styles.dashboardSubTitle}>bitgud-frontend</Typography>
       <Grid item xs={12} className={styles.dashboardGraph}>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
@@ -159,7 +178,7 @@ const Dashboard = () => {
         </ResponsiveContainer>
       </Grid>
 
-      <Typography className={styles.dashboardSubTitle}>Repo A</Typography>
+      <Typography className={styles.dashboardSubTitle}>bitgud-backend</Typography>
       <Grid item xs={12} className={styles.dashboardGraph}>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
