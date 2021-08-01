@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Grid, makeStyles, Paper, Select, Typography, MenuItem, Button } from '@material-ui/core'
+import { Container, Grid, makeStyles, Paper, Select, Typography, MenuItem, Button, TextField } from '@material-ui/core'
 import FormControl from '@material-ui/core/FormControl'
-import NativeSelect from '@material-ui/core/NativeSelect'
 import { useHistory } from 'react-router-dom'
 import axios from '../../instances/axios'
 import useStyles from './SettingsStyles'
 import AntSwitch from '../../components/AntSwitch'
 import AntInput from '../../components/AntInput'
-import { getDeployedFactory } from '../../utils/web3'
+import getDeployedFactory from '../../utils/web3'
 
 function Settings(props) {
   const styles = useStyles()
+
+  const [address, setAddress] = useState('')
 
   const [commitGap, setCommitGap] = useState('')
   const [commitAmount, setCommitAmount] = useState('')
@@ -140,13 +141,13 @@ function Settings(props) {
           </Button>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
-          <Button className={styles.settingsStart} onClick={getDeployedFactory}>
-            Add walet
+          <Button className={styles.settingsStart} onClick={() => getDeployedFactory(address)}>
+            Add Your walet
           </Button>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
           <Button className={styles.settingsStart} onClick={goToDocs}>
-            How to Start
+            Where to Start
           </Button>
         </Grid>
       </Grid>
