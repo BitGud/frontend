@@ -6,6 +6,7 @@ import useStyles from './SettingsStyles'
 
 import AntSwitch from '../../components/AntSwitch'
 import AntInput from '../../components/AntInput'
+import { getDeployedFactory } from '../../utils/web3'
 
 function Settings(props) {
   const styles = useStyles()
@@ -90,7 +91,7 @@ function Settings(props) {
           </FormControl>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
-          <Button className={styles.settingsStart} onClick={goToDocs}>
+          <Button className={styles.settingsStart} onClick={getDeployedFactory}>
             Add walet
           </Button>
         </Grid>
