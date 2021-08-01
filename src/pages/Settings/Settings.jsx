@@ -50,7 +50,7 @@ function Settings(props) {
     try {
       const data = await (await axios.post('setting', postObj)).data
       // On success, push to dashboard
-      history.push('/dashboard')
+      history.push('dashboard')
     } catch (err) {
       console.error('error getData', err)
     }

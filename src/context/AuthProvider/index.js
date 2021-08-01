@@ -29,7 +29,7 @@ const AuthProvider = (props) => {
     try {
       const userCred = await firebase.auth().signInWithEmailAndPassword(email, password)
       localStorage.setItem('uid', userCred.user.uid)
-      history.push('/settings')
+      history.push('settings')
       return Promise.resolve({
         email: userCred.user.email,
         uid: userCred.user.uid,
@@ -59,7 +59,7 @@ const AuthProvider = (props) => {
 
       await axios.post('/user', userObj)
 
-      history.push('/settings')
+      history.push('settings')
       return Promise.resolve({
         email: userCred.user.email,
         uid: userCred.user.uid,
@@ -88,7 +88,7 @@ const AuthProvider = (props) => {
 
       await axios.post('/user', userObj)
 
-      history.push('/settings')
+      history.push('settings')
       return Promise.resolve({
         email: userCred.user.email,
         uid: userCred.user.uid,
