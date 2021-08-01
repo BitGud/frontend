@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { firebase } from '../../instances'
 import AuthContext from '../AuthContext'
 
@@ -7,6 +8,7 @@ const AuthProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [uid, setUid] = useState('')
+  const history = useHistory()
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(async (user) => {
@@ -26,6 +28,7 @@ const AuthProvider = (props) => {
     try {
       const userCred = await firebase.auth().signInWithEmailAndPassword(email, password)
       localStorage.setItem('uid', userCred.user.uid)
+      history.push('/settings')
       return Promise.resolve({
         email: userCred.user.email,
         uid: userCred.user.uid,
@@ -41,6 +44,7 @@ const AuthProvider = (props) => {
       const provider = new firebase.auth.GithubAuthProvider()
       const userCred = await firebase.auth().signInWithPopup(provider)
       localStorage.setItem('uid', userCred.user.uid)
+      history.push('/settings')
       return Promise.resolve({
         email: userCred.user.email,
         uid: userCred.user.uid,

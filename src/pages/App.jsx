@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+import { Backdrop, CircularProgress } from '@material-ui/core'
 import { HomePage, DashboardPage, Auth, Settings, Docs } from '.'
 import { ErrorPage, Layout } from '../components'
 import { withRoot } from '../theme'
+import AuthContext from '../context/AuthContext'
 
 const RestrictedRoutes = () => {
+  const AuthObj = useContext(AuthContext)
+
+  if (AuthObj.isLoading) {
+    return (
+      <Backdrop style={{ zIndex: 10000 }}>
+        <CircularProgress style={{ color: 'white' }} />
+      </Backdrop>
+    )
+  }
+
   return (
     <Layout>
       <Switch>

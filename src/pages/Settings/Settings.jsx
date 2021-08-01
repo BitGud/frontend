@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container, Grid, makeStyles, Paper, Select, Typography, MenuItem, Button } from '@material-ui/core'
 import FormControl from '@material-ui/core/FormControl'
 import NativeSelect from '@material-ui/core/NativeSelect'
 import { useHistory } from 'react-router-dom'
+import axios from '../../instances/axios'
 import AntSwitch from '../../components/AntSwitch'
 import AntInput from '../../components/AntInput'
 
@@ -52,11 +53,46 @@ function Settings(props) {
   const styles = useStyles()
 
   const [commitGap, setCommitGap] = useState('')
+  const [commitAmount, setCommitAmount] = useState('')
   const [commitGap2, setCommitGap2] = useState('')
   const [state1, setState1] = useState(false)
   const [checked1, setChecked1] = useState(false)
   const [state2, setState2] = useState(false)
   const [checked2, setChecked2] = useState(false)
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await (await axios.get('setting')).data
+        if (data.monitorMode === 'commit-less') {
+          setChecked1(true)
+        } else {
+          setChecked1(false)
+        }
+        setCommitGap(data.commitFrequency)
+        setCommitAmount(data.commitAmount)
+      } catch (err) {
+        console.error('error getData', err)
+      }
+    }
+    getData()
+  }, [])
+
+  const saveSetting = async () => {
+    const postObj = {
+      monitorMode: checked1 ? 'commit-less' : 'commit-more',
+      commitFrequency: parseInt(commitGap, 10),
+      commitAmount: parseInt(commitAmount, 10),
+      uid: '',
+      enabled: true,
+    }
+
+    try {
+      const data = await (await axios.post('setting', postObj)).data
+    } catch (err) {
+      console.error('error getData', err)
+    }
+  }
 
   function flippedSwitch1(event) {
     if (checked1 === true) {
@@ -93,8 +129,9 @@ function Settings(props) {
         <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
           <Typography className={styles.settingsField}>I commit too much</Typography>
           <Grid className={styles.settingsGap} />
-          <AntSwitch disabled={state1} color="default" onChange={flippedSwitch1} />
+          <AntSwitch checked={checked1} disabled={state1} color="default" onChange={flippedSwitch1} />
         </Grid>
+
         <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
           <Typography className={styles.settingsField}>Commit Gap</Typography>
           <Grid className={styles.settingsGap} />
@@ -114,11 +151,29 @@ function Settings(props) {
         </Grid>
 
         <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
+          <Typography className={styles.settingsField}>Commit Amount</Typography>
+          <Grid className={styles.settingsGap} />
+          <FormControl className={styles.settingsSelect} variant="outlined" disabled={state1}>
+            <Select value={commitAmount} onChange={(e) => setCommitAmount(e.target.value)} input={<AntInput />}>
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={10}>10 Minutes</MenuItem>
+              <MenuItem value={20}>20 Minutes</MenuItem>
+              <MenuItem value={30}>30 Minutes</MenuItem>
+              <MenuItem value={40}>40 Minutes</MenuItem>
+              <MenuItem value={50}>50 Minutes</MenuItem>
+              <MenuItem value={60}>60 Minutes</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
+
+        {/* <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
           <Typography className={styles.settingsField}>I commit too much</Typography>
           <Grid className={styles.settingsGap} />
           <AntSwitch disabled={state2} color="default" onChange={flippedSwitch2} />
-        </Grid>
-        <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
+        </Grid> */}
+        {/* <Grid className={styles.settingsGroup} container justifyContent="center" alignContent="center">
           <Typography className={styles.settingsField}>Commit Gap</Typography>
           <Grid className={styles.settingsGap} />
           <FormControl className={styles.settingsSelect} variant="outlined" disabled={state2}>
@@ -134,8 +189,13 @@ function Settings(props) {
               <MenuItem value={60}>60 Minutes</MenuItem>
             </Select>
           </FormControl>
-        </Grid>
-        <Button className={styles.settingsStart} onClick={goToDocs}>
+        </Grid> */}
+        <div>
+          <Button className={styles.settingsStart} onClick={() => saveSetting()}>
+            Save
+          </Button>
+        </div>
+        <Button className={styles.settingsStart} style={{ marginTop: 20 }} onClick={goToDocs}>
           How to Start
         </Button>
       </Grid>
