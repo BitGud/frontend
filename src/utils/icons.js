@@ -1,9 +1,10 @@
 import login from '../assets/icons/login.png'
 import login2 from '../assets/icons/login2.png'
 import login3 from '../assets/icons/login3.png'
-import error from '../assets/icons/error.png'
-import error2 from '../assets/icons/error2.png'
+import errorBubbles from '../assets/icons/errorBubbles.png'
+import errorSadMessage from '../assets/icons/errorSadMessage.png'
 import gamer from '../assets/icons/gamer.svg'
+import heart from '../assets/icons/heart.png'
 
 import cat from '../assets/icons/cat.svg'
 import sun from '../assets/icons/sun.svg'
@@ -24,8 +25,9 @@ export default {
   login,
   login2,
   login3,
-  error,
-  error2,
+  errorBubbles,
+  errorSadMessage,
+  heart,
   homeCat,
   homeRaspberry,
   homeThinking,
