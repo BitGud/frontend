@@ -1,18 +1,18 @@
 import { AppBar, Toolbar, Button, IconButton, Drawer, Link, MenuItem, Container, Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import React, { useState, useEffect } from 'react'
-import { Link as RouterLink, useHistory } from 'react-router-dom'
+import { Link as RouterLink, Redirect, useHistory } from 'react-router-dom'
 
 import useStyles from './NavBarStyle'
 
 const headers = [
   {
     label: 'Dashboard',
-    href: '/dashboard',
+    href: '#/dashboard',
   },
   {
     label: 'Settings',
-    href: '/settings',
+    href: '#/settings',
   },
   {
     label: 'Logout',
@@ -25,7 +25,7 @@ function NavBar() {
   const history = useHistory()
 
   const goToPage = (page) => {
-    history.push(page)
+    return <Redirect to="#/page" />
   }
 
   const [state, setState] = useState({
@@ -48,9 +48,7 @@ function NavBar() {
   }, [])
 
   const getMenuButtons = () => {
-    return headers.map(({ label, href }) => {
-      return <Button onClick={() => goToPage(href)}>{label}</Button>
-    })
+    return headers.map(({ label, href }) => <Button onClick={() => goToPage(href)}>{label}</Button>)
   }
 
   const logo = <Typography className={styles.logo}>BitGud</Typography>

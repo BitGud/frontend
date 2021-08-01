@@ -11,7 +11,7 @@ function HomePage() {
   const styles = useStyles()
 
   const goToAuth = () => {
-    history.push('/auth')
+    history.push('auth')
   }
 
   return (
