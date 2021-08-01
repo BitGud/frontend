@@ -59,6 +59,7 @@ function Settings(props) {
   const [checked1, setChecked1] = useState(false)
   const [state2, setState2] = useState(false)
   const [checked2, setChecked2] = useState(false)
+  const history = useHistory()
 
   useEffect(() => {
     const getData = async () => {
@@ -89,6 +90,8 @@ function Settings(props) {
 
     try {
       const data = await (await axios.post('setting', postObj)).data
+      // On success, push to dashboard
+      history.push('/dashboard')
     } catch (err) {
       console.error('error getData', err)
     }
@@ -113,8 +116,6 @@ function Settings(props) {
       setState1(true)
     }
   }
-
-  const history = useHistory()
 
   const goToDocs = () => {
     history.push('docs')
