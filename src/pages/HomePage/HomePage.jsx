@@ -14,6 +14,10 @@ function HomePage() {
     history.push('/auth')
   }
 
+  const goToDocs = () => {
+    history.push('/docs')
+  }
+
   return (
     <>
       <Box m={2} display="flex" justifyContent="flex-end">
@@ -84,7 +88,7 @@ function HomePage() {
           </Grid>
         </Grid>
         <Grid container style={{ marginBottom: '10em' }}>
-          <Button color="primary" variant="contained" className={styles.homeStartBtn}>
+          <Button color="primary" variant="contained" className={styles.homeStartBtn} onClick={goToDocs}>
             Get Started
           </Button>
         </Grid>
