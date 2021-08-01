@@ -6,7 +6,7 @@ import axios from '../../instances/axios'
 import useStyles from './SettingsStyles'
 import AntSwitch from '../../components/AntSwitch'
 import AntInput from '../../components/AntInput'
-import getDeployedFactory from '../../utils/web3'
+import connectWalletReward from '../../utils/web3'
 
 function Settings(props) {
   const styles = useStyles()
@@ -141,8 +141,8 @@ function Settings(props) {
           </Button>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
-          <Button className={styles.settingsStart} onClick={() => getDeployedFactory(address)}>
-            Add Your walet
+          <Button className={styles.settingsStart} onClick={connectWalletReward}>
+            {window.web3 ? 'Get rewards!' : 'Add Your walet'}
           </Button>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
