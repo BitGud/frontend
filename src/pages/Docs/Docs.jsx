@@ -78,6 +78,22 @@ function Docs(props) {
               students all the way from beginner to advanced level.
             </Typography>
             <br />
+            <Typography id="Steps to Implement" className={styles.docsBodyHeadingText}>
+              Visual Code Extension
+            </Typography>
+            <Typography className={styles.docsBodyText}>
+              Download Here: https://marketplace.visualstudio.com/items?itemName=bitgud.bitgud <br />
+              View Repo: https://github.com/BitGud/bitgud-vscode
+            </Typography>
+            <br />
+            <Typography id="Steps to Implement" className={styles.docsBodyHeadingText}>
+              NPM module for Husky Hook
+            </Typography>
+            <Typography className={styles.docsBodyText}>
+              Download Here: https://npmjs.com/package/bitgud-plugin <br />
+              View Repo: https://github.com/BitGud/bitgud-plugin
+            </Typography>
+            <br />
           </div>
         </Grid>
       </Grid>

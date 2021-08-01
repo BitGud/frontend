@@ -4,6 +4,7 @@ import { Button, Paper, Container, Grid, makeStyles, Typography } from '@materia
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 import moment from 'moment'
+
 import icons from '../../utils/icons'
 import axios from '../../instances/axios'
 
@@ -71,32 +72,63 @@ const useStyles = makeStyles((theme) => ({
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
+    time: '9:00',
+    commits: 10,
   },
   {
-    name: 'Page B',
-    uv: 3000,
+    time: '10:00',
+    commits: 1,
   },
   {
-    name: 'Page C',
-    uv: 2000,
+    time: '11:00',
+    commits: 2,
   },
   {
-    name: 'Page D',
-    uv: 2780,
+    time: '12:00',
+    commits: 4,
   },
   {
-    name: 'Page E',
-    uv: 1890,
+    time: '1:00',
+    commits: 12,
   },
   {
-    name: 'Page F',
-    uv: 2390,
+    time: '2:00',
+    commits: 8,
   },
   {
-    name: 'Page G',
-    uv: 3490,
+    time: '3:00',
+    commits: 32,
+  },
+]
+
+const data2 = [
+  {
+    time: '9:00',
+    commits: 1,
+  },
+  {
+    time: '10:00',
+    commits: 3,
+  },
+  {
+    time: '11:00',
+    commits: 5,
+  },
+  {
+    time: '12:00',
+    commits: 2,
+  },
+  {
+    time: '1:00',
+    commits: 3,
+  },
+  {
+    time: '2:00',
+    commits: 5,
+  },
+  {
+    time: '3:00',
+    commits: 12,
   },
 ]
 
@@ -154,25 +186,25 @@ const Dashboard = () => {
       <Typography className={styles.dashboardSubTitle}>bitgud-frontend</Typography>
       <Grid item xs={12} className={styles.dashboardGraph}>
         <ResponsiveContainer width="100%" height={300}>
-          <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+          <AreaChart data={data2} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
             <defs>
-              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="colorCommit" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#bf69ff" stopOpacity={0.4} />
                 <stop offset="95%" stopColor="#bf69ff" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <XAxis dataKey="name" />
+            <XAxis dataKey="time" />
             <YAxis />
             <Tooltip />
             <CartesianGrid stroke="#323b4a" vertical={false} />
             <Area
               dot
               type="monotone"
-              dataKey="uv"
+              dataKey="commits"
               stroke="#bf69ff"
               strokeWidth={2}
               fillOpacity={1}
-              fill="url(#colorUv)"
+              fill="url(#colorCommit)"
             />
           </AreaChart>
         </ResponsiveContainer>
@@ -183,23 +215,23 @@ const Dashboard = () => {
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
             <defs>
-              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="colorCommit" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#bf69ff" stopOpacity={0.4} />
                 <stop offset="95%" stopColor="#bf69ff" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <XAxis dataKey="name" />
+            <XAxis dataKey="time" />
             <YAxis />
             <Tooltip />
             <CartesianGrid stroke="#323b4a" vertical={false} />
             <Area
               dot
               type="monotone"
-              dataKey="uv"
+              dataKey="commits"
               stroke="#bf69ff"
               strokeWidth={2}
               fillOpacity={1}
-              fill="url(#colorUv)"
+              fill="url(#colorCommit)"
             />
           </AreaChart>
         </ResponsiveContainer>
@@ -207,7 +239,7 @@ const Dashboard = () => {
 
       <Paper className={styles.dashboardCommit} container>
         <Typography className={styles.dashboardCommitTitle}>Latest Commit</Typography>
-        <Typography className={styles.dashboardCommitList}>Message: Create something amazing</Typography>
+        <Typography className={styles.dashboardCommitList}>Message: Doing Stuff</Typography>
         <Typography className={styles.dashboardCommitList}>
           CommitHash: 9ijoad08o3ud03l9ijoad08o3ud03l9ijoad08o3ud03l
         </Typography>
