@@ -10,8 +10,10 @@ const Footer = (props) => {
 
   return (
     <>
-      <Typography className={styles.footerText}>Made in NZ with Love</Typography>
-      <img alt="heart" src={icons.heart} />
+      <Typography className={styles.footerText}>
+        Made in NZ with
+        <img alt="heart" src={icons.heart} className={styles.footerImage} />
+      </Typography>
     </>
   )
 }
