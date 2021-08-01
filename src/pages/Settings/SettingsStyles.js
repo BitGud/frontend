@@ -41,6 +41,22 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
     color: 'white',
   },
+  authRegisterInput: {
+    fontFamily: 'Share',
+    fontSize: '1.5em',
+    width: '30em',
+    borderRadius: '1em',
+    outline: 'none',
+    textDecoration: 'none',
+    height: '2em',
+    paddingTop: '0.3em',
+    paddingLeft: '1em',
+    marginBottom: '1.8em',
+  },
+  authInputHelper: {
+    fontFamily: 'Share',
+    fontSize: '3em',
+  },
 }))
 
 export default useStyles
