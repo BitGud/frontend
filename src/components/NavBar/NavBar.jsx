@@ -1,18 +1,22 @@
 import { AppBar, Toolbar, Button, IconButton, Drawer, Link, MenuItem, Container, Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import React, { useState, useEffect } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, useHistory } from 'react-router-dom'
 
 import useStyles from './NavBarStyle'
 
 const headers = [
   {
     label: 'Dashboard',
-    href: '/dashboard',
+    href: '#/dashboard',
   },
   {
     label: 'Settings',
-    href: '/settings',
+    href: '#/settings',
+  },
+  {
+    label: 'Docs',
+    href: '#/docs',
   },
   {
     label: 'Logout',
@@ -22,6 +26,11 @@ const headers = [
 
 function NavBar() {
   const styles = useStyles()
+  const history = useHistory()
+
+  const goToPage = (page) => {
+    history.push(page)
+  }
 
   const [state, setState] = useState({
     mobileView: false,
@@ -43,20 +52,11 @@ function NavBar() {
   }, [])
 
   const getMenuButtons = () => {
-    return headers.map(({ label, href }) => {
-      return (
-        <Link
-          className={styles.link}
-          {...{
-            key: label,
-            to: href,
-            component: RouterLink,
-          }}
-        >
-          {label}
-        </Link>
-      )
-    })
+    return headers.map(({ label, href }) => (
+      <Button className={styles.button} onClick={() => goToPage(href)}>
+        {label}
+      </Button>
+    ))
   }
 
   const logo = <Typography className={styles.logo}>BitGud</Typography>
@@ -117,9 +117,7 @@ function NavBar() {
 
   return (
     <Container maxWidth="sm">
-      <AppBar position="absolute" elevation={0}>
-        {mobileView ? displayMobile() : displayDesktop()}
-      </AppBar>
+      <AppBar elevation={0}>{mobileView ? displayMobile() : displayDesktop()}</AppBar>
     </Container>
   )
 }

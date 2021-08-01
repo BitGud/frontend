@@ -27,8 +27,9 @@ const buildPath = path.resolve(__dirname, "build");
 fs.removeSync(buildPath);
 fs.ensureDirSync(buildPath);
 
-console.log(output)
-
-fs.outputJSONSync(
-  path.resolve(buildPath, onoutputlineShop + ".json")
-);
+for (let onlineShop in output) {
+  fs.outputJSONSync(
+    path.resolve(buildPath, onlineShop + ".json"),
+    output[onlineShop]
+  );
+}

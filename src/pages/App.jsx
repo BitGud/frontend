@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 import { Backdrop, CircularProgress } from '@material-ui/core'
 import { HomePage, DashboardPage, Auth, Settings, Docs } from '.'
@@ -42,4 +42,4 @@ const App = () => {
   )
 }
 
-export default withRoot(App)
+export default withRouter(withRoot(App))
