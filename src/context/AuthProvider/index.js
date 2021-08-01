@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { firebase } from '../../instances'
 import AuthContext from '../AuthContext'
+import axios from '../../instances/axios'
 
 const AuthProvider = (props) => {
   const [currentUser, setCurrentUser] = useState(null)
@@ -44,6 +45,20 @@ const AuthProvider = (props) => {
       const provider = new firebase.auth.GithubAuthProvider()
       const userCred = await firebase.auth().signInWithPopup(provider)
       localStorage.setItem('uid', userCred.user.uid)
+
+      const userObj = {
+        uid: userCred.user.uid,
+        displayName: userCred.user.displayName,
+        email: userCred.user.email,
+        photoUrl: userCred.user.photoURL,
+        githubUsername: userCred?.additionalUserInfo?.username ?? '',
+        lastCommit: new Date(),
+        webhooks: [],
+        lastShock: new Date(),
+      }
+
+      await axios.post('/user', userObj)
+
       history.push('/settings')
       return Promise.resolve({
         email: userCred.user.email,
@@ -59,6 +74,21 @@ const AuthProvider = (props) => {
     try {
       const userCred = await firebase.auth().createUserWithEmailAndPassword(email, password)
       localStorage.setItem('uid', userCred.user.uid)
+
+      const userObj = {
+        uid: userCred.user.uid,
+        displayName: userCred.user.displayName,
+        email: userCred.user.email,
+        photoUrl: userCred.user.photoURL,
+        githubUsername: '',
+        lastCommit: new Date(),
+        webhooks: [],
+        lastShock: new Date(),
+      }
+
+      await axios.post('/user', userObj)
+
+      history.push('/settings')
       return Promise.resolve({
         email: userCred.user.email,
         uid: userCred.user.uid,

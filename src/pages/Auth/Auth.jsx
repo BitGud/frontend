@@ -9,6 +9,7 @@ import { AuthContext } from '../../context'
 function Auth(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordCheck, setPasswordCheck] = useState('')
 
   const { signIn, signUp, signInWithGithub } = useContext(AuthContext)
 
@@ -35,7 +36,7 @@ function Auth(props) {
       </Box>
       <Grid container alignContent="center">
         <Grid container justifyContent="center" alignContent="center">
-          <Typography className={styles.authTitle}>LOGIN - BUM BUM BUM</Typography>
+          <Typography className={styles.authTitle}>LOGIN</Typography>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
           <Button onClick={github} class={styles.accessGithubBtn} variant="contained">
@@ -50,7 +51,7 @@ function Auth(props) {
           </Grid>
           <Grid container md={5} xs={12} direction="row" justifyContent="center" alignItems="center">
             <Grid item>
-              <Typography className={styles.authInputHelper}>Your name here</Typography>
+              <Typography className={styles.authInputHelper}>Your email here</Typography>
               <TextField
                 className={styles.authLoginInput}
                 variant="standard"
@@ -67,6 +68,7 @@ function Auth(props) {
                 className={styles.authLoginInput}
                 variant="standard"
                 margin="normal"
+                type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 InputProps={{
                   disableUnderline: true,
@@ -97,7 +99,7 @@ function Auth(props) {
 
         <Grid container alignContent="center" justifyContent="center" spacing={3}>
           <Grid item justifyContent="center" alignItems="center" md={12} xs={12}>
-            <Typography className={styles.authInputHelperRegister}>Your name here</Typography>
+            <Typography className={styles.authInputHelperRegister}>Your email here</Typography>
             <Box display="flex" justifyContent="center">
               <TextField
                 className={styles.authRegisterInput}
@@ -116,6 +118,7 @@ function Auth(props) {
               <TextField
                 className={styles.authRegisterInput}
                 variant="standard"
+                type="password"
                 margin="normal"
                 onChange={(e) => setPassword(e.target.value)}
                 InputProps={{
@@ -131,7 +134,8 @@ function Auth(props) {
                 className={styles.authRegisterInput}
                 variant="standard"
                 margin="normal"
-                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                onChange={(e) => setPasswordCheck(e.target.value)}
                 InputProps={{
                   disableUnderline: true,
                 }}
