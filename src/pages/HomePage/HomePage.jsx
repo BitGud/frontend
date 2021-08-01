@@ -29,7 +29,7 @@ function HomePage() {
               <Typography className={styles.homeSubtitle}>Bring your time back to commit!</Typography>
             </Grid>
             <Grid container>
-              <Button color="primary" variant="contained" className={styles.homeStartBtn}>
+              <Button color="primary" variant="contained" className={styles.homeStartBtn} onClick={goToAuth}>
                 Get Started
               </Button>
             </Grid>

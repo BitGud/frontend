@@ -1,18 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Grid, Container, Button, Box, Typography, TextField } from '@material-ui/core'
 
 import icons from '../../utils/icons'
 import { firebase } from '../../instances'
 import useStyles from './AuthStyles'
+import { AuthContext } from '../../context'
 
 function Auth(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  const { signIn, signUp, signInWithGithub } = useContext(AuthContext)
+
   const styles = useStyles()
 
-  function login() {
-    firebase.auth().signInWithEmailAndPassword(email, password)
+  const login = () => {
+    signIn(email, password)
+  }
+
+  const register = () => {
+    signUp(email, password)
+  }
+
+  const github = () => {
+    signInWithGithub()
   }
 
   return (
@@ -27,7 +38,7 @@ function Auth(props) {
           <Typography className={styles.authTitle}>LOGIN - BUM BUM BUM</Typography>
         </Grid>
         <Grid container justifyContent="center" alignContent="center">
-          <Button class={styles.accessGithubBtn} variant="contained">
+          <Button onClick={github} class={styles.accessGithubBtn} variant="contained">
             Access with GitHub
             <img className={styles.githubImg} alt="github" src={icons.github} />
           </Button>
@@ -128,7 +139,7 @@ function Auth(props) {
             </Box>
           </Grid>
           <Grid item justifyContent="center" alignItems="center">
-            <Button class={styles.authRegisterBtn} color="primary" variant="contained" onClick={login}>
+            <Button class={styles.authRegisterBtn} color="primary" variant="contained" onClick={register}>
               Okay, go!
             </Button>
           </Grid>

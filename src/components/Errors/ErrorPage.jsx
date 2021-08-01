@@ -1,25 +1,29 @@
 import React from 'react'
-import { Grid, Switch } from '@material-ui/core'
+import { Grid, Typography, Container } from '@material-ui/core'
 
+import useStyles from './ErrorStyles'
 import './Errors.scss'
 
 import icons from '../../utils/icons'
 
 const ErrorPage = (props) => {
+  const styles = useStyles()
+
   return (
-    <div className="messageContainer">
-      <Switch defaultChecked color="default" inputProps={{ 'aria-label': 'checkbox with default color' }} />
-      <h1 className="notFoundText">Uh oh!</h1>
-      <h1 className="notFoundTextLine2">The page cannot be found...</h1>
-      <Grid container>
-        <Grid item>
-          <img alt="error" src={icons.error} />
+    <Container className={styles.errorContainer} alignContent="center" spacing={10} maxWidth="md">
+      <Typography className={styles.errorTitle}>Uh oh!</Typography>
+      <Typography className={styles.errorTitle}>The page cannot be found...</Typography>
+      <Grid container alignContent="center" justifyContent="center" spacing={1}>
+        <img className={styles.errorImage} alt="error bubbles" src={icons.errorBubbles} />
+        <img className={styles.errorImage} alt="error sad message" src={icons.errorSadMessage} />
+        {/* <Grid item md={6} xs={12}>
+          <img className={styles.errorImage} alt="error bubbles" src={icons.errorBubbles} />
         </Grid>
-        <Grid item>
-          <img alt="error 2" src={icons.error2} />
-        </Grid>
+        <Grid item md={6} xs={12}>
+          <img className={styles.errorImage} alt="error sad message" src={icons.errorSadMessage} />
+        </Grid> */}
       </Grid>
-    </div>
+    </Container>
   )
 }
 
