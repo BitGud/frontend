@@ -22,11 +22,11 @@ const RestrictedRoutes = () => {
 
 const App = () => {
   return (
-    <Switch>
-      <Route exact path="/auth" component={Auth} />
-      <Route exact path="/" component={HomePage} />
-      <Route component={RestrictedRoutes} />
-    </Switch>
+      <Switch>
+        <Route exact path="/auth" component={Auth} />
+        <Route exact path="/" component={HomePage} />
+        <Route component={RestrictedRoutes} />
+      </Switch>
   )
 }
 

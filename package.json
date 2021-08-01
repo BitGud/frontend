@@ -4,6 +4,7 @@
   "engines": {
     "node": "^16.4.2"
   },
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
