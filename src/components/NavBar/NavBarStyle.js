@@ -15,12 +15,11 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     fontFamily: 'Share',
-    color: '#aaa',
-
-    '&:hover': {
-      color: '#282828',
-      cursor: 'pointer',
-    },
+    color: '#fff',
+    padding: '0.6em 2em 0.6em 2em',
+    borderRadius: '1.5em 1em',
+    fontSize: '1.3em',
+    textTransform: 'none',
   },
   link: {
     fontFamily: 'Share',

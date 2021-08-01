@@ -20,8 +20,8 @@ function withRoot(Component) {
     return (
       <MuiThemeProvider theme={themeMode}>
         <CssBaseline />
-        <Box display="flex" justifyContent="flex-end" mt={3.5} mb={3.5} mr={1}>
-          <Switch defaultChecked color="default" onChange={toggleTheme} />
+        <Box style={{ zIndex: 1000 }} display="flex" justifyContent="flex-end" mt={3.5} mb={3.5} mr={1}>
+          <Switch style={{ zIndex: 1000 }} defaultChecked color="default" onChange={toggleTheme} />
         </Box>
         <Component {...props} />
       </MuiThemeProvider>
