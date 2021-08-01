@@ -140,7 +140,7 @@ const Dashboard = () => {
           <Grid item className={styles.dashboardTile} md={3} xs={12}>
             <Typography className={styles.dashboardTileSubtitle}>Last shock</Typography>
             {/* <Tile src={icons.timer} alt="timer" text="13:30" /> */}
-            <Tile src={icons.timer} alt="timer" text={moment(dashboardData?.lastShock ?? new Date()).format('hh:ss')} />
+            <Tile src={icons.timer} alt="timer" text={moment(dashboardData?.lastShock ?? new Date()).format('HH:ss')} />
           </Grid>
           <Grid item md={1} />
           <Grid item className={styles.dashboardTile} md={3} xs={12}>
