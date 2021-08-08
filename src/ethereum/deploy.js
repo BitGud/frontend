@@ -3,8 +3,8 @@ const Web3 = require('web3')
 
 const BitGudReward = require('./build/BitGudReward.json')
 
-const MNEMONIC = 'insane common suffer tilt multiply offer bus dolphin train skull cluster weekend'
-const PROVIDER_LINK = 'https://rinkeby.infura.io/v3/1173fa0d86194fc5894d8fca29d380be'
+const MNEMONIC = ''
+const PROVIDER_LINK = ''
 
 const provider = new HDWalletProvider(MNEMONIC, PROVIDER_LINK)
 const web3 = new Web3(provider)
